@@ -1,3 +1,3 @@
 ### Resistor color code calculator
 
-__In progress__
+*In progress...*
