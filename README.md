@@ -1,6 +1,8 @@
 # Resistor Color Code Calculator
 
-A simple C++ application for calculating the resistance and tolerance of a resistor based on its color bands. This project provides a console-based interface for users to input the color bands of a resistor, and it outputs the resistor's resistance value and tolerance.
+![Demo...v1](/assests/demo.png)
+
+Not the best... A simple C++ application for calculating the resistance and tolerance of a resistor based on its color bands. This project provides a console-based interface for users to input the color bands of a resistor, and it outputs the resistor's resistance value and tolerance.
 
 ## Features
 
