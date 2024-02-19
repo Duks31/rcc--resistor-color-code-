@@ -1,9 +1,11 @@
+// Importing neccessary libraries
 #include <iostream>
 #include <unordered_map>
 #include <string>
 #include <algorithm>
 #include <cctype>
 
+// Defining the Resistor struct
 struct Resistor {
     std::string band1;
     std::string band2;
@@ -11,6 +13,7 @@ struct Resistor {
     std::string tolerance;
 };
 
+// Defining the colorToDigit map
 std::unordered_map<std::string, int> colorToDigit = {
     {"black", 0},
     {"brown", 1},
@@ -24,6 +27,7 @@ std::unordered_map<std::string, int> colorToDigit = {
     {"white", 9}
 };
 
+// Defining the colorToMultiplier map
 std::unordered_map<std::string, int> colorToMultiplier = {
     {"black", 1},
     {"brown", 10},
@@ -37,6 +41,7 @@ std::unordered_map<std::string, int> colorToMultiplier = {
     {"white", 100000000}
 };
 
+// Defining the colorToTolerance map
 std::unordered_map<std::string, double> colorToTolerance = {
     {"black", 0},
     {"brown", 1},
@@ -52,13 +57,14 @@ std::unordered_map<std::string, double> colorToTolerance = {
     {"silver", 10}
 };
 
+
 Resistor inputResistor() {
     Resistor r;
-    std::cout << "Enter the first band: ";
+    std::cout << "Enter the first band: "; // getting user input
     while (true) {
         std::cin >> r.band1;
         std::transform(r.band1.begin(), r.band1.end(), r.band1.begin(), 
-        [](unsigned char c) {return std::tolower(c);});
+        [](unsigned char c) {return std::tolower(c);}); // convert input to lowercase
         if (colorToDigit.find(r.band1) != colorToDigit.end()) {
             break;
         }
@@ -104,15 +110,15 @@ Resistor inputResistor() {
 
 
 double calculateRating(const Resistor& resistor) {
-    const std::string* band1 = &resistor.band1;
-    const std::string* band2 = &resistor.band2;
-    const std::string* multiplier = &resistor.multiplier;
+    const std::string* band1 = &resistor.band1; // getting the band1 value
+    const std::string* band2 = &resistor.band2; // getting the band2 value
+    const std::string* multiplier = &resistor.multiplier; // getting the multiplier value
 
-    int band1Value = colorToDigit[*band1];
-    int band2Value = colorToDigit[*band2];
-    int multiplierValue = colorToMultiplier[*multiplier];
+    int band1Value = colorToDigit[*band1]; // getting the value of band1
+    int band2Value = colorToDigit[*band2]; // getting the value of band2
+    int multiplierValue = colorToMultiplier[*multiplier]; // getting the value of multiplier
 
-    double rating = (band1Value * 10 + band2Value) * multiplierValue;
+    double rating = (band1Value * 10 + band2Value) * multiplierValue; // calculating the rating of the resistor
     return rating;
 }
 
