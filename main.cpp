@@ -82,7 +82,7 @@ Resistor inputResistor() {
         std::cout << "Invalid color, please enter a valid color: ";
     };
 
-    std::cout << "Enter the multiplier: ";
+    std::cout << "Enter the multiplier(3rd band): ";
     while (true) {
         std::cin >> r.multiplier;
         std::transform(r.multiplier.begin(), r.multiplier.end(), r.multiplier.begin(), 
@@ -93,7 +93,7 @@ Resistor inputResistor() {
         std::cout << "Invalid color, please enter a valid color: ";
     };
 
-    std::cout << "Enter the tolerance: ";
+    std::cout << "Enter the tolerance(4th band): ";
     while (true) {
         std::cin >> r.tolerance;
         std::transform(r.tolerance.begin(), r.tolerance.end(), r.tolerance.begin(), 
